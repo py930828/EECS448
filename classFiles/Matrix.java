@@ -36,9 +36,10 @@ public class Matrix {
 		}
 		return det;
 	}
-	private Matrix subMatrix(int r, int c)
+	public Matrix subMatrix(int r, int c)
 	{
 		Matrix sub = new Matrix(size - 1);
+		System.out.println("size is "+size);
 		int row = 0; 
 		for (int i = 0; i < size; ++i)
 		{
@@ -65,7 +66,6 @@ public class Matrix {
 			for (int j = 0; j < size; ++j)
 			{
 				inv.mat[i][j] = Math.pow(-1.0, (double)i + j) * subMatrix(j, i).determinant() / det;
-				System.out.println(inv.mat[i][j]);
 			}
 		}
 		return inv;
