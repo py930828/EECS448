@@ -28,7 +28,7 @@ public class Main {
 				{
 					break;
 				}
-				// test
+				// building the Matrix
 				Matrix m = new Matrix(size);
 				for(int i = 0; i < size; i++)
 				{
@@ -37,6 +37,7 @@ public class Main {
 						m.build(sc.nextInt(), i, j);
 					}
 				}
+				// Printing the Matrix
 				out.write("M = "+ "\r\n");
 				for(int i = 0; i < size; i++){
 					for(int j = 0; j < size; j++)
@@ -46,8 +47,10 @@ public class Main {
 					}
 					out.write("\r\n");
 				}
+				// printing the determinant
+				det = m.determinant();
+				out.write("det(M) = " + m.GetDet() + "\r\n");
 			
-				
 			}
 			out.close();
 			
