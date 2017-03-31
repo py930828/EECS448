@@ -42,7 +42,7 @@ public class Main {
 				for(int i = 0; i < size; i++){
 					for(int j = 0; j < size; j++)
 					{
-						out.write(m.getMat(i,j));
+						out.write(Double.toString(m.getMat(i,j)));
 						out.write(" ");
 					}
 					out.write("\r\n");
@@ -57,7 +57,7 @@ public class Main {
 					for(int i = 0; i < size; i++){
 						for(int j = 0; j < size; j++)
 						{
-							out.write(inverse.getMat(i, j));
+							out.write(Double.toString(inverse.getMat(i, j)));
 							out.write(" ");
 						}
 						out.write("\r\n");

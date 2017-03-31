@@ -13,7 +13,7 @@ public class Matrix {
 		mat = new double[size][size];
 		
 	}
-	void build(int num, int row, int column )
+	void build(double num, int row, int column )
 	{
 		mat[row][column] = num;
 	}
@@ -58,28 +58,29 @@ public class Matrix {
 	}
 	public Matrix inverse()
 	{
+		double det = determinant();
 		Matrix inv = new Matrix(size);
 		for (int i = 0; i < size; ++i)
 		{
 			for (int j = 0; j < size; ++j)
 			{
 				inv.mat[i][j] = Math.pow(-1.0, (double)i + j) * subMatrix(j, i).determinant() / det;
+				System.out.println(inv.mat[i][j]);
 			}
 		}
 		return inv;
 	}
-	public String getInverse( int row, int column)
+	public double getInverse( int row, int column)
 	{
-		return Double.toString(mat[row][column]);
+		return mat[row][column];
 	}
 	public String GetDet()
 	{
 		return Double.toString(det);
 	}
-	public 
-	String getMat(int row, int column)
+	public double getMat(int row, int column)
 	{
-		return Double.toString(mat[row][column]);
+		return mat[row][column];
 	}
 
 }
