@@ -54,13 +54,29 @@ public class Matrix {
 			}
 			++row;
 		}
-		
 		return sub;
+	}
+	public Matrix inverse()
+	{
+		Matrix inv = new Matrix(size);
+		for (int i = 0; i < size; ++i)
+		{
+			for (int j = 0; j < size; ++j)
+			{
+				inv.mat[i][j] = Math.pow(-1.0, (double)i + j) * subMatrix(j, i).determinant() / det;
+			}
+		}
+		return inv;
+	}
+	public String getInverse( int row, int column)
+	{
+		return Double.toString(mat[row][column]);
 	}
 	public String GetDet()
 	{
 		return Double.toString(det);
 	}
+	public 
 	String getMat(int row, int column)
 	{
 		return Double.toString(mat[row][column]);

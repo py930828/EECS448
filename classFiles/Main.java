@@ -24,7 +24,7 @@ public class Main {
 			while(sc.hasNextLine()){
 				size = sc.nextInt();
 				//check the size of the Matrix
-				if(size < 0)
+				if(size <= 0)
 				{
 					break;
 				}
@@ -50,14 +50,28 @@ public class Main {
 				// printing the determinant
 				det = m.determinant();
 				out.write("det(M) = " + m.GetDet() + "\r\n");
-			
+				if (m.GetDet() != "0")
+				{
+					Matrix inverse = m.inverse();
+					out.write("M inverse = " + "\r\n");
+					for(int i = 0; i < size; i++){
+						for(int j = 0; j < size; j++)
+						{
+							out.write(inverse.getMat(i, j));
+							out.write(" ");
+						}
+						out.write("\r\n");
+					}
+				}
 			}
+			
+			out.write("Done!");
+			sc.close();
 			out.close();
 			
 		}catch (Exception e){
 			System.out.println("Could not find input file: %s"+args[0]);
 			e.printStackTrace();
 		}
-		
 	}
 }
