@@ -27,6 +27,7 @@ public class Main {
 				{
 					break;
 				}
+				// test
 				Matrix m = new Matrix(check);
 				
 			}
